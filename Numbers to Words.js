@@ -117,11 +117,20 @@ function startConverting(number) {
         return displayTens_lessThanNineteen_inWords((number[number.length - 2] + number[number.length - 1]));
     }
     else {
-        //so here it is a number that we should build its words
-        let myArray = ["Trillions", "Hundred Millions", "Ten Millions", "Millions", "Hundred Thousands"];
-        for (let i = leftSide_zeroCounter - 1; i < getRealLength(input); i++) {
-
+        //so here it is a number that we SHOULD BUILD its words
+        let myArray = ["Trillions", "Hundred Billions", "Ten Billions", "Billions", "Hundred Millions", "Ten Millions", "Millions", "Hundred Thousands"];
+        let columnIndex = getNumberVolumeIndex(number);
+        let output = "";
+        for (let i = leftSide_zeroCounter - 1; i < number.length; i++) {
+            if(number[i] != "0"){
+                output = output + number[i] + " " + myArray[columnIndex];
+                
+            }
+            else{
+                columnIndex++;
+            }            
         }
+        return output;
     }
 }
 
