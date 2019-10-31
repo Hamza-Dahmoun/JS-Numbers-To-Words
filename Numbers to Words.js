@@ -1,21 +1,31 @@
-var number = prompt("Please enter a number: ");
-console.log(number);
+var input = prompt("Please enter a number: ");
+var leftSide_zeroCounter = 0;
+//this variable will tell us whether the leftSide_zeroCounter is already calculated or not,
+//so that we avoid doing the same thing bcuz the function getRealLength() is called twice
+let iszeroCounter_Calculated = false;
+
 
 /* THIS SHOULD BE OUR FUNCTION */
-
+console.log(input + " " + getRealLength(input) + " " + getNumberVolume(input) + " " + leftSide_zeroCounter + " zero \'0\' in the left side.");
 /* THIS SHOULD BE OUR FUNCTION */
 
 
 
 function getRealLength(number) {
     //this function will return the real length of the parameter 'number'
-    //It will check whether there are zeros '0' in the right side of 'number' and ignore them
+    //It will check whether there are zeros '0' in the left side of 'number' and ignore them
     let length = number.length;
+
     for (let i = 0; i < number.length; i++) {
         if (number[i] == "0") {
             length = length - 1;
+            if(!iszeroCounter_Calculated){
+                leftSide_zeroCounter = leftSide_zeroCounter + 1;
+            }            
         }
     }
+    iszeroCounter_Calculated = true;
+    return length;
 }
 
 function getNumberVolume(number) {
