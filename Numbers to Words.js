@@ -7,6 +7,8 @@ let iszeroCounter_Calculated = false;
 
 /* THIS SHOULD BE OUR FUNCTION */
 console.log(input + " " + getRealLength(input) + " " + getNumberVolume(input) + " " + leftSide_zeroCounter + " zero \'0\' in the left side.");
+
+
 /* THIS SHOULD BE OUR FUNCTION */
 
 
@@ -19,9 +21,9 @@ function getRealLength(number) {
     for (let i = 0; i < number.length; i++) {
         if (number[i] == "0") {
             length = length - 1;
-            if(!iszeroCounter_Calculated){
+            if (!iszeroCounter_Calculated) {
                 leftSide_zeroCounter = leftSide_zeroCounter + 1;
-            }            
+            }
         }
     }
     iszeroCounter_Calculated = true;
@@ -71,5 +73,47 @@ function getNumberVolume(number) {
             break;
         case 13:
             return "Trillions";
+    }
+}
+
+function startConverting(number) {
+    
+    /*for (let i = leftSide_zeroCounter - 1; i < getRealLength(input); i++) {
+
+    }*/
+}
+
+function displayOnes_inWords(character) {
+    switch (character) {
+        case 0:
+            return "Zero";
+            break;
+        case 1:
+            return "One";
+            break;
+        case 2:
+            return "Two";
+            break;
+        case 3:
+            return "Three";
+            break;
+        case 4:
+            return "Four";
+            break;
+        case 5:
+            return "Five";
+            break;
+        case 6:
+            return "Six";
+            break;
+        case 7:
+            return "Seven";
+            break;
+        case 8:
+            return "Eight";
+            break;
+        case 9:
+            return "Nine";
+            break;
     }
 }
