@@ -6,7 +6,7 @@ let iszeroCounter_Calculated = false;
 
 
 /* THIS SHOULD BE OUR FUNCTION */
-console.log(input + " " + getRealLength(input) + " " + getNumberVolume(input) + " " + leftSide_zeroCounter + " zero \'0\' in the left side.");
+console.log(input + " -- length: " + getRealLength(input) + " -- " + getNumberVolume(input) + " -- " + leftSide_zeroCounter + " zero \'0\' in the left side. -- " + startConverting(input));
 
 
 /* THIS SHOULD BE OUR FUNCTION */
@@ -77,7 +77,16 @@ function getNumberVolume(number) {
 }
 
 function startConverting(number) {
-    
+    if(number<10){
+        console.log(displayOnes_inWords(number[number.length-leftSide_zeroCounter]));
+    }
+    else if(number<20){
+        console.log(displayTens_lessThanNineteen_inWords(number));
+    }
+    else{
+        //so here it is a number that we should build its words
+
+    }
     /*for (let i = leftSide_zeroCounter - 1; i < getRealLength(input); i++) {
 
     }*/
@@ -124,7 +133,7 @@ function displayTens_lessThanNineteen_inWords(tens) {
             return "Ten";
             break;
         case 11:
-            return "eleven";
+            return "Eleven";
             break;
         case 12:
             return "Twelve";
