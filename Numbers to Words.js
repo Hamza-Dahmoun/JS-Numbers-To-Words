@@ -117,3 +117,67 @@ function displayOnes_inWords(character) {
             break;
     }
 }
+
+function displayTens_lessThanNineteen_inWords(tens) {
+    switch (tens) {
+        case 10:
+            return "Ten";
+            break;
+        case 11:
+            return "eleven";
+            break;
+        case 12:
+            return "Twelve";
+            break;
+        case 13:
+            return "Thirteen";
+            break;
+        case 14:
+            return "Fourteen";
+            break;
+        case 15:
+            return "Fifteen";
+            break;
+        case 16:
+            return "Sixteen";
+            break;
+        case 17:
+            return "Seventeen";
+            break;
+        case 18:
+            return "Eightteen";
+            break;
+        case 19:
+            return "Nineteen";
+            break;
+    }
+}
+function displayTens_moreThanNineteen_inWords(character) {
+    switch (character) {
+        case 2:
+            return "Twenty";
+            break;
+        case 3:
+            return "Thirty";
+            break;
+        case 4:
+            return "Fourty";
+            break;
+        case 5:
+            return "Fifty";
+            break;
+        case 6:
+            return "Sixty";
+            break;
+        case 7:
+            return "Seventy";
+            break;
+        case 8:
+            return "Eighty";
+            break;
+        case 9:
+            return "Ninety";
+            break;
+    }
+}
+
