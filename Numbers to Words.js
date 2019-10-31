@@ -25,6 +25,9 @@ function getRealLength(number) {
                 leftSide_zeroCounter = leftSide_zeroCounter + 1;
             }
         }
+        else{
+            break;
+        }
     }
     iszeroCounter_Calculated = true;
     return length;
@@ -121,15 +124,19 @@ function startConverting(number) {
         let myArray = ["Trillions", "Hundred Billions", "Ten Billions", "Billions", "Hundred Millions", "Ten Millions", "Millions", "Hundred Thousands"];
         let columnIndex = getNumberVolumeIndex(number);
         let output = "";
-        for (let i = leftSide_zeroCounter - 1; i < number.length; i++) {
-            if(number[i] != "0"){
-                output = output + number[i] + " " + myArray[columnIndex];
-                
-            }
+        console.log(leftSide_zeroCounter);
+        for (let i = leftSide_zeroCounter; i < number.length; i++) {
+            console.log(number[i]);
+            //if(number[i] != "0"){
+                console.log(number[i]);
+                output = output + displayOnes_inWords(number[i]) + " " + myArray[columnIndex];
+                columnIndex++;
+            /*}
             else{
                 columnIndex++;
-            }            
+            }    */        
         }
+        console.log(output);
         return output;
     }
 }
