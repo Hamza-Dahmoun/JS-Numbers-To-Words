@@ -78,10 +78,10 @@ function getNumberVolume(number) {
 
 function startConverting(number) {
     if(number<10){
-        console.log(displayOnes_inWords(number[number.length-leftSide_zeroCounter]));
+        return displayOnes_inWords(number[number.length-1]);
     }
     else if(number<20){
-        console.log(displayTens_lessThanNineteen_inWords(number));
+        return displayTens_lessThanNineteen_inWords((number[number.length-2]+number[number.length-1]));
     }
     else{
         //so here it is a number that we should build its words
@@ -94,34 +94,34 @@ function startConverting(number) {
 
 function displayOnes_inWords(character) {
     switch (character) {
-        case 0:
+        case "0":
             return "Zero";
             break;
-        case 1:
+        case "1":
             return "One";
             break;
-        case 2:
+        case "2":
             return "Two";
             break;
-        case 3:
+        case "3":
             return "Three";
             break;
-        case 4:
+        case "4":
             return "Four";
             break;
-        case 5:
+        case "5":
             return "Five";
             break;
-        case 6:
+        case "6":
             return "Six";
             break;
-        case 7:
+        case "7":
             return "Seven";
             break;
-        case 8:
+        case "8":
             return "Eight";
             break;
-        case 9:
+        case "9":
             return "Nine";
             break;
     }
@@ -129,34 +129,34 @@ function displayOnes_inWords(character) {
 
 function displayTens_lessThanNineteen_inWords(tens) {
     switch (tens) {
-        case 10:
+        case "10":
             return "Ten";
             break;
-        case 11:
+        case "11":
             return "Eleven";
             break;
-        case 12:
+        case "12":
             return "Twelve";
             break;
-        case 13:
+        case "13":
             return "Thirteen";
             break;
-        case 14:
+        case "14":
             return "Fourteen";
             break;
-        case 15:
+        case "15":
             return "Fifteen";
             break;
-        case 16:
+        case "16":
             return "Sixteen";
             break;
-        case 17:
+        case "17":
             return "Seventeen";
             break;
-        case 18:
+        case "18":
             return "Eightteen";
             break;
-        case 19:
+        case "19":
             return "Nineteen";
             break;
     }
