@@ -75,21 +75,54 @@ function getNumberVolume(number) {
             return "Trillions";
     }
 }
+function getNumberVolumeIndex(number) {
+    //this function return the index of getNumberVolume(number) in the array
+    //["Trillions", "Hundred Billions", "Ten Billions", "Billions", "Hundred Millions", "Ten Millions", "Millions", "Hundred Thousands"]
+    //so that we know which word to start with
+    switch (getNumberVolume(number)) {
+        case "Trillions":
+            return 0;
+            break;
+        case "Hundred Billions":
+            return 1;
+            break;
+        case "Ten Billions":
+            return 2;
+            break;
+        case "Billions":
+            return 3;
+            break;
+        case "Billions":
+            return 4;
+            break;
+        case "Hundred Millions":
+            return 5;
+            break;
+        case "Ten Millions":
+            return 6;
+            break;
+        case "Millions":
+            return 7;
+        case "Hundred Thousands":
+            return 8;
+            break;
+    }
+}
 
 function startConverting(number) {
-    if(number<10){
-        return displayOnes_inWords(number[number.length-1]);
+    if (number < 10) {
+        return displayOnes_inWords(number[number.length - 1]);
     }
-    else if(number<20){
-        return displayTens_lessThanNineteen_inWords((number[number.length-2]+number[number.length-1]));
+    else if (number < 20) {
+        return displayTens_lessThanNineteen_inWords((number[number.length - 2] + number[number.length - 1]));
     }
-    else{
+    else {
         //so here it is a number that we should build its words
+        let myArray = ["Trillions", "Hundred Millions", "Ten Millions", "Millions", "Hundred Thousands"];
+        for (let i = leftSide_zeroCounter - 1; i < getRealLength(input); i++) {
 
+        }
     }
-    /*for (let i = leftSide_zeroCounter - 1; i < getRealLength(input); i++) {
-
-    }*/
 }
 
 function displayOnes_inWords(character) {
