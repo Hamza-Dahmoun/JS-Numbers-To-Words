@@ -28,6 +28,7 @@ let iszeroCounter_Calculated = false;
 console.log(input);
 console.log(numberToArrray(input));
 console.log(addUpToTrillionsText(numberToArrray(input)));
+console.log(writeOnes(addUpToTrillionsText(numberToArrray(input))));
 /* THIS SHOULD BE OUR FUNCTION */
 //006452698012
 
@@ -48,7 +49,7 @@ function numberToArrray(number){
 
 function addUpToTrillionsText(arrayOfArrays){
     //this function does the following:
-    //[0, 0, 6] [4,5, 2] [6, 9, 8] [0, 1, 2] -------> [0, 0, 6]"Billions" [4, 5, 2]"Millions" [6, 9, 8]"Thousands" [0, 1, 2]""
+    //[0, 0, 6] [4,5, 2] [6, 9, 8] [0, 1, 2] -------> [0, 0, 6, "Billions"] [4, 5, 2, "Millions"] [6, 9, 8, "Thousands"] [0, 1, 2, ""]
     let range = ["", "Thousands", "Millions", "Billions", "Trillions"];
     let rangeIndex = 0;
     for(let i = arrayOfArrays.length-1; i>=0; i--){
@@ -58,8 +59,51 @@ function addUpToTrillionsText(arrayOfArrays){
     return arrayOfArrays;
 }
 
-function writeOnes(){
-
+function writeOnes(arrayOfArrays){
+    //this function does the following:
+    //[0, 0, 6, "Billions"] [4, 5, 2, "Millions"] [6, 9, 8, "Thousands"] [0, 1, 2, ""]
+    // ------> [0, 0, "six", "Billions"] [4, 5, "two", "Millions"] [6, 9, "eight", "Thousands"] [0, 1, 2, ""]
+    for(let i =0; i<arrayOfArrays.length; i++){
+        if(arrayOfArrays[i][1] != "1"){
+            //so it won't be a teen number
+            arrayOfArrays[i][2] = oneNumber_toWord(arrayOfArrays[i][2]);
+        }
+    }
+    return arrayOfArrays;
+}
+function oneNumber_toWord(character){
+    switch (character) {
+        case "0":
+            return "Zero";
+            break;
+        case "1":
+            return "One";
+            break;
+        case "2":
+            return "Two";
+            break;
+        case "3":
+            return "Three";
+            break;
+        case "4":
+            return "Four";
+            break;
+        case "5":
+            return "Five";
+            break;
+        case "6":
+            return "Six";
+            break;
+        case "7":
+            return "Seven";
+            break;
+        case "8":
+            return "Eight";
+            break;
+        case "9":
+            return "Nine";
+            break;
+    }
 }
 
 function writeTens(){
@@ -70,7 +114,7 @@ function writeHundreds(){
     
 }
 
-function testArray_toWords(){
+function textArray_toWords(){
 
 }
 
