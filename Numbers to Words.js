@@ -27,7 +27,32 @@ let iszeroCounter_Calculated = false;
 *******************/
 /* THIS SHOULD BE OUR FUNCTION */
 
+function numberToArrray(){
 
+}
+
+function addUpToTrillionsText(){
+
+}
+
+function writeOnes(){
+
+}
+
+function writeTens(){
+
+}
+
+function writeHundreds(){
+    
+}
+
+function testArray_toWords(){
+
+}
+
+
+/***************************** OLD LOGIC ******************************/
 
 function getRealLength(number) {
     //this function will return the real length of the parameter 'number'
