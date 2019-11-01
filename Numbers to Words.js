@@ -10,9 +10,20 @@ let iszeroCounter_Calculated = false;
 
 /**** NEW LOGIC ****
 6452698012
+
 006 452 698 012
+
 [0, 0, 6] [4,5, 2] [6, 9, 8] [0, 1, 2]
+
 [0, 0, 6]"Billions" [4, 5, 2]"Millions" [6, 9, 8]"Thousands" [0, 1, 2]""
+
+["", "", 6]"Billions" [4, 5, 2]"Millions" [6, 9, 8]"Thousands" ["", 1, 2]""
+
+["", "", "six"]"Billions" ["four", 5, "two"]"Millions" ["six", 9, "eight"]"Thousands" ["", 1, 2]""
+
+["", "", "six"]"Billions" ["four", "five", "two"]"Millions" ["six", "ninety", "eight"]"Thousands" ["", "twelve"]""
+
+"six Billions four five two Millions six ninety eight Thousands twelve"
 *******************/
 /* THIS SHOULD BE OUR FUNCTION */
 
