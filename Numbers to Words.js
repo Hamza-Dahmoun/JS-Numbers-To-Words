@@ -9,7 +9,7 @@ let iszeroCounter_Calculated = false;
 //console.log(input + " -- length: " + getRealLength(input) + " -- " + getNumberVolume(input) + " -- " + leftSide_zeroCounter + " zero \'0\' in the left side. -- " + startConverting(input));
 
 /**** NEW LOGIC ****
-6452698012
+006452698012
 
 006 452 698 012
 
@@ -25,10 +25,23 @@ let iszeroCounter_Calculated = false;
 
 "six Billions four five two Millions six ninety eight Thousands twelve"
 *******************/
+console.log(input);
+console.log(numberToArrray(input));
 /* THIS SHOULD BE OUR FUNCTION */
 
-function numberToArrray(){
-
+function numberToArrray(number){
+    //this function will do the following:
+    //006452698012 --> [0, 0, 6] [4,5, 2] [6, 9, 8] [0, 1, 2]
+    let myBigArray = [];
+    let mySmallArray = [];
+    for(let i=0; i<number.length; i++){
+        mySmallArray.push(number[i]);
+        if(mySmallArray.length == 3){
+            myBigArray.push(mySmallArray);
+            mySmallArray = [];
+        }
+    }
+    return myBigArray;
 }
 
 function addUpToTrillionsText(){
