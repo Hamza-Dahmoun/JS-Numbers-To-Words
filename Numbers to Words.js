@@ -6,9 +6,14 @@ let iszeroCounter_Calculated = false;
 
 
 /* THIS SHOULD BE OUR FUNCTION */
-console.log(input + " -- length: " + getRealLength(input) + " -- " + getNumberVolume(input) + " -- " + leftSide_zeroCounter + " zero \'0\' in the left side. -- " + startConverting(input));
+//console.log(input + " -- length: " + getRealLength(input) + " -- " + getNumberVolume(input) + " -- " + leftSide_zeroCounter + " zero \'0\' in the left side. -- " + startConverting(input));
 
-
+/**** NEW LOGIC ****
+6452698012
+006 452 698 012
+[0, 0, 6] [4,5, 2] [6, 9, 8] [0, 1, 2]
+[0, 0, 6]"Billions" [4, 5, 2]"Millions" [6, 9, 8]"Thousands" [0, 1, 2]""
+*******************/
 /* THIS SHOULD BE OUR FUNCTION */
 
 
@@ -124,19 +129,16 @@ function startConverting(number) {
         let myArray = ["Trillions", "Hundred Billions", "Ten Billions", "Billions", "Hundred Millions", "Ten Millions", "Millions", "Hundred Thousands"];
         let columnIndex = getNumberVolumeIndex(number);
         let output = "";
-        console.log(leftSide_zeroCounter);
         for (let i = leftSide_zeroCounter; i < number.length; i++) {
-            console.log(number[i]);
-            //if(number[i] != "0"){
-                console.log(number[i]);
+            if(number[i] != "0"){
                 output = output + displayOnes_inWords(number[i]) + " " + myArray[columnIndex];
                 columnIndex++;
-            /*}
+            }
             else{
                 columnIndex++;
-            }    */        
+            }           
+            console.log(columnIndex + output);
         }
-        console.log(output);
         return output;
     }
 }
