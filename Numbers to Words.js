@@ -135,6 +135,11 @@ function writeTens(arrayOfArrays) {
             //so it won't be a teen number
             arrayOfArrays[i][1] = oneNormalTens_toWord(arrayOfArrays[i][1]);
         }
+        else{
+            //so (arrayOfArrays[i][1] + arrayOfArrays[i][2]) form a number from 10~19            
+            arrayOfArrays[i][2] = oneTeens_toWords((arrayOfArrays[i][1]+arrayOfArrays[i][2]));
+            arrayOfArrays[i][1] = "";
+        }
     }
     return arrayOfArrays;
 }
@@ -167,6 +172,40 @@ function oneNormalTens_toWord(character) {
             break;
         case "9":
             return "Ninety";
+            break;
+    }
+}
+function oneTeens_toWords(teens){
+    switch (teens) {
+        case "10":
+            return "Ten";
+            break;
+        case "11":
+            return "Eleven";
+            break;
+        case "12":
+            return "Twelve";
+            break;
+        case "13":
+            return "Thirteen";
+            break;
+        case "14":
+            return "Fourteen";
+            break;
+        case "15":
+            return "Fifteen";
+            break;
+        case "16":
+            return "Sixteen";
+            break;
+        case "17":
+            return "Seventeen";
+            break;
+        case "18":
+            return "Eightteen";
+            break;
+        case "19":
+            return "Nineteen";
             break;
     }
 }
