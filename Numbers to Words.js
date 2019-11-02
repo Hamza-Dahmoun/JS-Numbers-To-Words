@@ -21,9 +21,11 @@ let iszeroCounter_Calculated = false;
 
 ["", "", "six"]"Billions" ["four", 5, "two"]"Millions" ["six", 9, "eight"]"Thousands" ["", 1, 2]""
 
-["", "", "six"]"Billions" ["four", "five", "two"]"Millions" ["six", "ninety", "eight"]"Thousands" ["", "twelve"]""
+["", "", "six"]"Billions" ["four", "fifty", "two"]"Millions" ["six", "ninety", "eight"]"Thousands" ["", "twelve"]""
 
-"six Billions four five two Millions six ninety eight Thousands twelve"
+["", "", "six"]"Billions" ["four hundreds", "fifty", "two"]"Millions" ["six hundred", "ninety", "eight"]"Thousands" ["", "twelve"]""
+
+"six Billions four hundred fifty two Millions six hundred ninety eight Thousands twelve"
 *******************/
 console.log(input);
 console.log(numberToArrray(input));
@@ -31,6 +33,7 @@ console.log(addUpToTrillionsText(numberToArrray(input)));
 console.log(writeOnes(addUpToTrillionsText(numberToArrray(input))));
 console.log(writeHundreds(writeOnes(addUpToTrillionsText(numberToArrray(input)))));
 console.log(writeTens(writeHundreds(writeOnes(addUpToTrillionsText(numberToArrray(input))))));
+console.log(addHundredsWord(writeTens(writeHundreds(writeOnes(addUpToTrillionsText(numberToArrray(input)))))));
 /* THIS SHOULD BE OUR FUNCTION */
 //006452698012
 
@@ -208,6 +211,18 @@ function oneTeens_toWords(teens){
             return "Nineteen";
             break;
     }
+}
+
+function addHundredsWord(arrayOfArrays){
+    //this function does the following
+    //["", "", "six", "Billions"] ["four", "fifty", "two", "Millions"] ["six", "ninety", "eight", "Thousands"] ["", "twelve", ""]
+    // --------> ["", "", "six", "Billions"] ["four hundreds", "fifty", "two", "Millions"] ["six hundreds", "ninety", "eight", "Thousands"] ["", "twelve", ""]
+    for (let i = 0; i < arrayOfArrays.length; i++) {
+        if(arrayOfArrays[i][0] != ""){
+            arrayOfArrays[i][0] = arrayOfArrays[i][0] + " hundreds";
+        }        
+    }
+    return arrayOfArrays;
 }
 
 function textArray_toWords() {
