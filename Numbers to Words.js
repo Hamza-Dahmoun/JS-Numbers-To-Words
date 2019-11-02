@@ -64,7 +64,7 @@ function numberToArrray(number) {
 function addUpToTrillionsText(arrayOfArrays) {
     //this function does the following:
     //[0, 0, 6] [4,5, 2] [6, 9, 8] [0, 1, 2] -------> [0, 0, 6, "Billions"] [4, 5, 2, "Millions"] [6, 9, 8, "Thousands"] [0, 1, 2, ""]
-    let range = ["", "Thousands", "Millions", "Billions", "Trillions"];
+    let range = ["", "Thousand", "Million", "Billion", "Trillion"];
     let rangeIndex = 0;
     for (let i = arrayOfArrays.length - 1; i >= 0; i--) {
         arrayOfArrays[i].push(range[rangeIndex]);
