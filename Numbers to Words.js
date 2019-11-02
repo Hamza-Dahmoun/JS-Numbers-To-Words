@@ -83,7 +83,7 @@ function writeOnes(arrayOfArrays){
 function oneNumber_toWord(character){
     switch (character) {
         case "0":
-            return "Zero";
+            return "";
             break;
         case "1":
             return "One";
