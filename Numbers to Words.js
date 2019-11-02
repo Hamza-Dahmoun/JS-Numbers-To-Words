@@ -29,6 +29,7 @@ console.log(input);
 console.log(numberToArrray(input));
 console.log(addUpToTrillionsText(numberToArrray(input)));
 console.log(writeOnes(addUpToTrillionsText(numberToArrray(input))));
+console.log(writeHundreds(writeOnes(addUpToTrillionsText(numberToArrray(input)))));
 /* THIS SHOULD BE OUR FUNCTION */
 //006452698012
 
@@ -118,8 +119,14 @@ function writeTens(){
 
 }
 
-function writeHundreds(){
-    
+function writeHundreds(arrayOfArrays){
+    //this function does the following:
+    //[0, 0, "six", "Billions"] [4, 5, "two", "Millions"] [6, 9, "eight", "Thousands"] [0, 1, 2, ""]
+    // -------> ["", 0, "six", "Billions"] ["four", 5, "two", "Millions"] ["six", 9, "eight", "Thousands"] ["", 1, 2, ""]
+    for(let i =0; i<arrayOfArrays.length; i++){
+        arrayOfArrays[i][0] = oneNumber_toWord(arrayOfArrays[i][0]);
+    }
+    return arrayOfArrays;
 }
 
 function textArray_toWords(){
