@@ -1,29 +1,20 @@
 var input = prompt("Please enter a number: ");
-var leftSide_zeroCounter = 0;
-//this variable will tell us whether the leftSide_zeroCounter is already calculated or not,
-//so that we avoid doing the same thing bcuz the function getRealLength() is called twice
-let iszeroCounter_Calculated = false;
 
-
-/* THIS SHOULD BE OUR FUNCTION */
-//console.log(input + " -- length: " + getRealLength(input) + " -- " + getNumberVolume(input) + " -- " + leftSide_zeroCounter + " zero \'0\' in the left side. -- " + startConverting(input));
-
+/* ************************* */
 /**** NEW LOGIC ****
-006452698012
+STEP1: 006452698012
 
-006 452 698 012
+STEP2: [0, 0, 6] [4,5, 2] [6, 9, 8] [0, 1, 2]
 
-[0, 0, 6] [4,5, 2] [6, 9, 8] [0, 1, 2]
+STEP3: [0, 0, 6]"Billions" [4, 5, 2]"Millions" [6, 9, 8]"Thousands" [0, 1, 2]""
 
-[0, 0, 6]"Billions" [4, 5, 2]"Millions" [6, 9, 8]"Thousands" [0, 1, 2]""
+STEP4: ["", "", 6]"Billions" [4, 5, 2]"Millions" [6, 9, 8]"Thousands" ["", 1, 2]""
 
-["", "", 6]"Billions" [4, 5, 2]"Millions" [6, 9, 8]"Thousands" ["", 1, 2]""
+STEP5: ["", "", "six"]"Billions" ["four", 5, "two"]"Millions" ["six", 9, "eight"]"Thousands" ["", 1, 2]""
 
-["", "", "six"]"Billions" ["four", 5, "two"]"Millions" ["six", 9, "eight"]"Thousands" ["", 1, 2]""
+STEP6: ["", "", "six"]"Billions" ["four", "fifty", "two"]"Millions" ["six", "ninety", "eight"]"Thousands" ["", "twelve"]""
 
-["", "", "six"]"Billions" ["four", "fifty", "two"]"Millions" ["six", "ninety", "eight"]"Thousands" ["", "twelve"]""
-
-["", "", "six"]"Billions" ["four hundreds", "fifty", "two"]"Millions" ["six hundred", "ninety", "eight"]"Thousands" ["", "twelve"]""
+STEP7: ["", "", "six"]"Billions" ["four hundreds", "fifty", "two"]"Millions" ["six hundred", "ninety", "eight"]"Thousands" ["", "twelve"]""
 
 "six Billions four hundred fifty two Millions six hundred ninety eight Thousands twelve"
 *******************/
@@ -35,8 +26,8 @@ console.log(writeHundreds(writeOnes(addUpToTrillionsText(numberToArrray(input)))
 console.log(writeTens(writeHundreds(writeOnes(addUpToTrillionsText(numberToArrray(input))))));
 console.log(addHundredsWord(writeTens(writeHundreds(writeOnes(addUpToTrillionsText(numberToArrray(input)))))));
 console.log(textArray_toWords(addHundredsWord(writeTens(writeHundreds(writeOnes(addUpToTrillionsText(numberToArrray(input))))))));
-/* THIS SHOULD BE OUR FUNCTION */
-//006452698012
+/* ************************* */
+
 
 function numberToArrray(number) {
     //this function will do the following:
