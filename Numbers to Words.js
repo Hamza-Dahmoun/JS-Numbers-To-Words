@@ -40,8 +40,16 @@ function numberToArrray(number){
     for(let i=0; i<number.length; i++){
         mySmallArray.push(number[i]);
         if(mySmallArray.length == 3){
+            //lets puh this small array to the big array
             myBigArray.push(mySmallArray);
             mySmallArray = [];
+        }
+        else if(i == number.length-1){
+            //so this is the last character in the number, we'll add the character zero '0' to remaining positions in small array
+            //and then push it to the big array
+            do{
+                mySmallArray.push("0");
+            }while(mySmallArray<3)            
         }
     }
     return myBigArray;
