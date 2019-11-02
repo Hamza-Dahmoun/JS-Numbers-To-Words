@@ -1,6 +1,5 @@
-var input = prompt("Please enter a number: ");
 
-/* ************************* */
+/* UPTO NOW MAX NUMBER IS 999999999999999  */
 /**** NEW LOGIC ****
 STEP1: 006452698012
 
@@ -18,14 +17,23 @@ STEP7: ["", "", "six"]"Billions" ["four hundreds", "fifty", "two"]"Millions" ["s
 
 "six Billions four hundred fifty two Millions six hundred ninety eight Thousands twelve"
 *******************/
-console.log(input);
-console.log(numberToArrray(input));
-console.log(addUpToTrillionsText(numberToArrray(input)));
-console.log(writeOnes(addUpToTrillionsText(numberToArrray(input))));
-console.log(writeHundreds(writeOnes(addUpToTrillionsText(numberToArrray(input)))));
-console.log(writeTens(writeHundreds(writeOnes(addUpToTrillionsText(numberToArrray(input))))));
-console.log(addHundredsWord(writeTens(writeHundreds(writeOnes(addUpToTrillionsText(numberToArrray(input)))))));
-console.log(textArray_toWords(addHundredsWord(writeTens(writeHundreds(writeOnes(addUpToTrillionsText(numberToArrray(input))))))));
+
+
+var input = prompt("Please enter a number: "); 
+//console.log(input);
+//console.log(numberToArrray(input));
+//console.log(addUpToTrillionsText(numberToArrray(input)));
+//console.log(writeOnes(addUpToTrillionsText(numberToArrray(input))));
+//console.log(writeHundreds(writeOnes(addUpToTrillionsText(numberToArrray(input)))));
+//console.log(writeTens(writeHundreds(writeOnes(addUpToTrillionsText(numberToArrray(input))))));
+//console.log(addHundredsWord(writeTens(writeHundreds(writeOnes(addUpToTrillionsText(numberToArrray(input)))))));
+//console.log(textArray_toWords(addHundredsWord(writeTens(writeHundreds(writeOnes(addUpToTrillionsText(numberToArrray(input))))))));
+var out = textArray_toWords(addHundredsWord(writeTens(writeHundreds(writeOnes(addUpToTrillionsText(numberToArrray(input)))))));
+var outputPara = document.createElement("P");
+outputPara.innerHTML = input + "<br/> " + out;
+outputPara.style.fontSize = "25px";
+document.body.appendChild(outputPara);
+
 /* ************************* */
 
 
