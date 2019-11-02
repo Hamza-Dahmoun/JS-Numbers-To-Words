@@ -20,14 +20,14 @@ STEP7: ["", "", "six"]"Billions" ["four hundreds", "fifty", "two"]"Millions" ["s
 
 
 var input = prompt("Please enter a number: "); 
-//console.log(input);
-//console.log(numberToArrray(input));
-//console.log(addUpToTrillionsText(numberToArrray(input)));
-//console.log(writeOnes(addUpToTrillionsText(numberToArrray(input))));
-//console.log(writeHundreds(writeOnes(addUpToTrillionsText(numberToArrray(input)))));
-//console.log(writeTens(writeHundreds(writeOnes(addUpToTrillionsText(numberToArrray(input))))));
-//console.log(addHundredsWord(writeTens(writeHundreds(writeOnes(addUpToTrillionsText(numberToArrray(input)))))));
-//console.log(textArray_toWords(addHundredsWord(writeTens(writeHundreds(writeOnes(addUpToTrillionsText(numberToArrray(input))))))));
+console.log(input);
+console.log(numberToArrray(input));
+console.log(addUpToTrillionsText(numberToArrray(input)));
+console.log(writeOnes(addUpToTrillionsText(numberToArrray(input))));
+console.log(writeHundreds(writeOnes(addUpToTrillionsText(numberToArrray(input)))));
+console.log(writeTens(writeHundreds(writeOnes(addUpToTrillionsText(numberToArrray(input))))));
+console.log(addHundredsWord(writeTens(writeHundreds(writeOnes(addUpToTrillionsText(numberToArrray(input)))))));
+console.log(textArray_toWords(addHundredsWord(writeTens(writeHundreds(writeOnes(addUpToTrillionsText(numberToArrray(input))))))));
 var out = textArray_toWords(addHundredsWord(writeTens(writeHundreds(writeOnes(addUpToTrillionsText(numberToArrray(input)))))));
 var outputPara = document.createElement("P");
 outputPara.innerHTML = input + "<br/> " + out;
@@ -41,20 +41,21 @@ function numberToArrray(number) {
     //this function will do the following:
     //006452698012 --> [0, 0, 6] [4,5, 2] [6, 9, 8] [0, 1, 2]
     let myBigArray = [];
-    let mySmallArray = [];
-    for (let i = 0; i < number.length; i++) {
-        mySmallArray.push(number[i]);
+    let mySmallArray = [];//this should always have three cells
+    for (let i = number.length-1; i >=0; i--) {
+        mySmallArray.unshift(number[i]);
         if (mySmallArray.length == 3) {
             //lets puh this small array to the big array
-            myBigArray.push(mySmallArray);
+            myBigArray.unshift(mySmallArray);
             mySmallArray = [];
         }
-        else if (i == number.length - 1) {
+        else if (i == 0) {
             //so this is the last character in the number, we'll add the character zero '0' to remaining positions in small array
             //and then push it to the big array
             do {
-                mySmallArray.push("0");
-            } while (mySmallArray < 3)
+                mySmallArray.unshift("0");
+            } while (mySmallArray.length < 3)
+            myBigArray.unshift(mySmallArray);
         }
     }
     return myBigArray;
