@@ -34,7 +34,7 @@ var out = textArray_toWords(addHundredsWord(writeTens(writeHundreds(writeOnes(ad
 var outputPara = document.createElement("P");
 outputPara.innerHTML = input + "<br/> " + out;
 outputPara.style.fontSize = "25px";
-document.getElementById("outputArea").removeChild();
+document.getElementById("outputArea").innerHTML="";
 document.getElementById("outputArea").appendChild(outputPara);
 }
 /* ************************* */
