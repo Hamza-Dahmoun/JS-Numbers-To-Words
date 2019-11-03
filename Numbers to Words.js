@@ -19,7 +19,6 @@ STEP7: ["", "", "six"]"Billions" ["four hundreds", "fifty", "two"]"Millions" ["s
 *******************/
 
 function startWriting(){
-    console.log("hi");
 var input = document.getElementById("inputText").value;
 //var input = prompt("Please enter a number: "); 
 //console.log(input);
@@ -32,7 +31,7 @@ var input = document.getElementById("inputText").value;
 //console.log(textArray_toWords(addHundredsWord(writeTens(writeHundreds(writeOnes(addUpToTrillionsText(numberToArrray(input))))))));
 var out = textArray_toWords(addHundredsWord(writeTens(writeHundreds(writeOnes(addUpToTrillionsText(numberToArrray(input)))))));
 var outputPara = document.createElement("P");
-outputPara.innerHTML = input + "<br/> " + out;
+outputPara.innerHTML = addSpacesInNumber(input) + "<br/> <br/>" + out;
 outputPara.style.fontSize = "25px";
 document.getElementById("outputArea").innerHTML="";
 document.getElementById("outputArea").appendChild(outputPara);
@@ -242,4 +241,14 @@ function textArray_toWords(arrayOfArrays) {
         }            
     }
     return output;
+}
+
+function addSpacesInNumber(number){
+    let number_withSpaces = "";
+    let i = number.length-1;
+    while(i>=3){
+        i=i-3;
+        number_withSpaces = number_withSpaces + number[i-3] + number[i-2] + number[i-1] + number[i] + " ";
+    }
+    return number_withSpaces;
 }
