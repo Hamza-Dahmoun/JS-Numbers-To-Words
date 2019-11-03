@@ -28,11 +28,10 @@ var input = prompt("Please enter a number: ");
 //console.log(writeTens(writeHundreds(writeOnes(addUpToTrillionsText(numberToArrray(input))))));
 //console.log(addHundredsWord(writeTens(writeHundreds(writeOnes(addUpToTrillionsText(numberToArrray(input)))))));
 //console.log(textArray_toWords(addHundredsWord(writeTens(writeHundreds(writeOnes(addUpToTrillionsText(numberToArrray(input))))))));
-var arrayOfWords = addHundredsWord(writeTens(writeHundreds(writeOnes(addUpToTrillionsText(numberToArrray(input))))));
-var englishOutput = textArray_toWords(arrayOfWords);
-var arabicOutput = translateOutput_toArabic(arrayOfWords); 
+//var arrayOfWords = addHundredsWord(writeTens(writeHundreds(writeOnes(addUpToTrillionsText(numberToArrray(input))))));
+var out = textArray_toWords(addHundredsWord(writeTens(writeHundreds(writeOnes(addUpToTrillionsText(numberToArrray(input)))))));
 var outputPara = document.createElement("P");
-outputPara.innerHTML = input + "<br/> " + englishOutput + "<br/> " + arabicOutput;
+outputPara.innerHTML = input + "<br/> " + out;
 outputPara.style.fontSize = "25px";
 document.body.appendChild(outputPara);
 
@@ -241,8 +240,4 @@ function textArray_toWords(arrayOfArrays) {
         }            
     }
     return output;
-}
-
-function translateOutput_toArabic(){
-
 }
