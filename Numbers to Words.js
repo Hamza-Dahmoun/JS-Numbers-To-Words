@@ -244,11 +244,18 @@ function textArray_toWords(arrayOfArrays) {
 }
 
 function addSpacesInNumber(number){
-    let number_withSpaces = "";
-    let i = number.length-1;
-    while(i>=3){
-        i=i-3;
-        number_withSpaces = number_withSpaces + number[i-3] + number[i-2] + number[i-1] + number[i] + " ";
+    //step1: 12345678
+    //step2: 87 654 321
+    //step3: 123 456 78
+    let number1 = "";
+    let j=0;
+    for(let i = number.length-1; i>=0; i--){
+        number1 = number1 + number[i];
+        j = j + 1;
+        if(j % 3 == 0){
+            number1 = number1 + " ";
+        }
     }
-    return number_withSpaces;
+    //Now lets reverse the new string and return it
+    return number1.split("").reverse().join("");    
 }
