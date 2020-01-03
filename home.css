@@ -1,0 +1,17 @@
+body {
+    text-align: center;
+}
+
+#inputText {
+    border: 1px solid #cacaca;
+    padding: 8px;
+    border-radius: 1px;
+    font-size: 18px;
+}
+
+#outputArea {
+    width: 60%;
+    margin-left: auto;
+    margin-right: auto;
+    letter-spacing: 2px;
+}
